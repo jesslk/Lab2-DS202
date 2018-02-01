@@ -4,6 +4,7 @@
 
 # Lab 2 4 Chocolate 20180201 
 
+## Team member: Jessica Kueon, Laurence Vander Werff, Alexandrea Tucker
 ## Lab 2
 ```{r}
 library(tidyverse)
