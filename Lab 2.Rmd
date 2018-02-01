@@ -1,5 +1,7 @@
 
 
+
+
 # Lab 2 4 Chocolate 20180201 
 
 ## Lab 2
@@ -25,3 +27,35 @@ ggplot(choco, aes(x = Review.Date, fill = Review.Date)) + geom_bar()
 ```
 
 This is a right-skewed distribution, so we can conclude that the number of ratings are more concentrated in 2014 ~ 2016. 
+
+
+## Individual question set
+
+1. How are ratings distributed?
+
+```{r}
+ggplot(choco, aes(x = Rating, fill = Rating)) + geom_histogram(binwidth = 0.5)
+```
+Most of the ratings are concentrated in 3 or 4. 
+
+
+2. Do ratings depend on the cocoa percentage of a chocolate bar?
+
+```{r}
+ggplot(data = choco, aes(x = Cocoa.Pct, y = Rating)) + geom_point()
+```
+There is no significant correlation between cocoa percentage and rating since the data appears to be randomly scattered. 
+
+
+3. How do ratings compare across different company locations?
+
+```{r}
+choco3 <- dplyr::filter(choco, Company.Location %in% c("U.S.A.", "France", "Canada"))
+ggplot(data = choco3, aes(x = Company.Location, y = Rating)) + geom_boxplot()
+```
+
+Boxplot of France shows two outliers and USA shows only one outlier.
+
+
+
+# Workflow: Working on Github is sometimes confusing. We are still learning. 
